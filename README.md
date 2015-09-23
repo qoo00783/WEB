@@ -1,2 +1,2 @@
 # WEB
-Something about web page will totally be put in here
+Something about web page will be put in here
