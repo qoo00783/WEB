@@ -36,6 +36,8 @@
       <file-size-threshold>1048576</file-size-threshold>
     </multipart-config>
   </servlet>
+  
+  <!-- Any end of url is ".do". The servlet mapping will transfer it to ActionServlet in struts.-->
   <servlet-mapping>
     <servlet-name>action</servlet-name>
     <url-pattern>*.do</url-pattern>
