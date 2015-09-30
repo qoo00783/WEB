@@ -5,7 +5,7 @@
   </description>
   <display-name>Struts Web Application</display-name>
 
-  <!-- The default encoding of our web container isn't UTF-8, so we use filter to assign the encoding type what we use in web page to parse all requests-->
+  <!-- The default encoding of our web container isn't UTF-8, so we use filter to assign the encoding type what we use in web pages to parse all requests-->
   <filter>
     <filter-name>setCharacterFilter</filter-name>
     <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
@@ -19,11 +19,14 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
+  <!-- Initialize some configuration in this servlet during deploying process -->
   <servlet>
     <servlet-name>initConfig</servlet-name>
     <servlet-class>init.InitConfig</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
+
+  <!-- -->
   <servlet>
     <servlet-name>action</servlet-name>
     <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
