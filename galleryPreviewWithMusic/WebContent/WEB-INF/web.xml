@@ -19,14 +19,14 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
-  <!-- Initialize some configuration in this servlet during deploying process -->
+  <!-- Initialize the configuration in this servlet during deploying process -->
   <servlet>
     <servlet-name>initConfig</servlet-name>
     <servlet-class>init.InitConfig</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
-  <!-- -->
+  <!-- Involve struts in this project-->
   <servlet>
     <servlet-name>action</servlet-name>
     <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
