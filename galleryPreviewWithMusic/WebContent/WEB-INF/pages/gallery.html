@@ -36,8 +36,6 @@
             //Get count of selected files
             var countFiles = $(this)[0].files.length;
 
-            var imgPath = $(this)[0].value;
-            var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
             var image_holder = $("#tiles");
             var count = 0;
             image_holder.empty();                        
@@ -125,7 +123,8 @@
                 	                	                                            	                                                         
                 };            
             }
-            
+           
+            // Check whether your browser supports FileReader 
             if (typeof (FileReader) != "undefined") {                	
                 	
             //loop for each file selected for uploaded.
