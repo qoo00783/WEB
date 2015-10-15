@@ -52,11 +52,10 @@
                 filters = $('#filters li');                       
 
             /**
-             * Reinitializes the wookmark handler after all images have loaded
+             * Reinitializes the wookmark handler after each image has loaded
              */
             function applyLayout() {  
-            	//$('#tiles').imagesLoaded(function() {
-            		// Destroy the old handler
+                    // Destroy the old handler
                     if (handler.wookmarkInstance) {
                       handler.wookmarkInstance.clear();
                     }
@@ -64,12 +63,12 @@
                     // Create a new layout handler.
                     handler = $('#tiles li');
                     handler.wookmark(options);
-            	//});                    
             }
             
             var c = document.createElement('canvas');
             var cx = c.getContext('2d');
-            
+           
+            // Resize the image by canvas 
             function imagetocanvas( img, thumbwidth ) {                        
                 var dimensions = resize( img.width, img.height, thumbwidth);            
                  
@@ -83,6 +82,7 @@
                 return c.toDataURL('image/jpeg', 0.5);
               }
             
+            // Calculate the ratio of resized image
             function resize( imagewidth, imageheight, thumbwidth) {
                 var w = 0, h = 0, x = 0, y = 0,
                     widthratio  = imagewidth / thumbwidth;
@@ -93,15 +93,13 @@
                 return { w:w, h:h, x:x, y:y };
             }
             
-            //var imgCount = 0;
-            
             function loadImage(file) {
                 var img = new Image();
                 img.src = file;   
                 
+                // Called when each image has loaded completely
                 img.onload = function(){
                 	
-                //$("<a> </a>").appendTo(image_holder);                	
                 $("<li /li>").appendTo(image_holder);
                 if(this.width > 300)
                 {                	                	
