@@ -1,0 +1,96 @@
+/*
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+*/
+body{
+	color: #222;
+	font-size: 13px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+/***** End Header ****/
+/**
+ * Grid container
+ */
+#tiles {
+  list-style-type: none;
+  position: relative; /** Needed to ensure items are laid out relative to this container **/
+  margin: 0;
+}
+
+/**
+ * Grid items
+ */
+#tiles li {
+  background-color: #ffffff;
+  border: 1px solid #DDDDDD;
+  display: none; /** Hide items initially to avoid a flicker effect **/
+  padding: 4px;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+#tiles li.inactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#tiles li img {
+  display: block;
+}
+/**
+ * Grid item text
+ */
+#tiles li p {
+  color: #666;
+  font-size: 12px;
+}
+#tiles li p img{
+	float:left;
+	padding:8px 8px 3px 10px;
+	cursor:pointer;
+}
+#tiles li p span{
+	float:right;
+	padding-top:8px;
+	padding-right:5px;
+}
+#tiles li p span{
+	color: #666;
+}
+/**
+ * Some extra styles to randomize heights of grid items.
+ */
+#tiles ali:nth-child(3n) {
+  height: 175px;
+}
+
+#tiles ali:nth-child(4n-3) {
+  padding-bottom: 30px;
+}
+
+#tiles ali:nth-child(5n) {
+  height: 250px;
+}
+
+/** General page styling **/
+#main {
+  padding: 30px 0 30px 0;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: normal;
+  margin: 30px 0 3px 0;
+}
+
+header p {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin: 0;
+}
